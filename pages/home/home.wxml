@@ -21,7 +21,7 @@
           </view>
         </view>
         <view class="loading-container" wx:if="{{!topList}}">
-          <loading></loading>
+          <view style="text-align: center;">无榜单信息</view>
         </view>
       </view>
     </view>

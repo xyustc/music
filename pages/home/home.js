@@ -4,7 +4,8 @@
  * @Date: 2021-03-25 21:55:28
  * @LastEditTime: 2021-03-25 22:00:22
  */
-// pages/home/home.js
+const app = getApp()
+const api = require("../../utils/api.js")
 Page({
 
   /**
