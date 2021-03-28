@@ -12,3 +12,11 @@
   text-align: center;
 }
 
+.list-title{
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #665b3c;
+  width: 100%;
+}
