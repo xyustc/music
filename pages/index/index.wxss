@@ -20,6 +20,8 @@
   color: #353535;
 }
 .background .info .songName{
+  font: 40rpx 'Microsoft YaHei',sans-serif;
+  font-weight: bold;
   color: darkgoldenrod;
 }
 .background .list {

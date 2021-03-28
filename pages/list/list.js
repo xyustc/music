@@ -1,48 +1,24 @@
 /*
  * @Description: 
  * @Author: XingYu
- * @Date: 2021-03-25 21:55:28
- * @LastEditTime: 2021-03-28 19:27:43
+ * @Date: 2021-03-28 19:09:27
+ * @LastEditTime: 2021-03-28 19:23:08
  */
 const app = getApp().globalData
-const api = require("../../utils/api.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    songlist:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getRankData()
-  },
 
-  toSearch: function (e) {
-    wx.navigateTo({
-      url: '/pages/search/search'
-    })
-  },
-  // _selectItemRank: function (event) {
-  //   const data = event.currentTarget.dataset.data
-  //   app.globalData.topId = data.id
-  //   app.globalData._selectItemRank = data
-  //   wx.navigateTo({
-  //     url: '/pages/list/list'
-  //   })
-  // },
-  _getRankData: function () {
-    api.getTopList().then((res) => {
-      var res1 = res.data.replace('jp1(', '')
-      var res2 = JSON.parse(res1.substring(0, res1.length - 1))
-      this.setData({
-        topList: res2.data.topList
-      })
-    })
   },
 
   /**
@@ -56,7 +32,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      songlist : app.songlist
+    })
   },
 
   /**

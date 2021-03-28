@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: XingYu
  * @Date: 2021-03-25 08:19:03
- * @LastEditTime: 2021-03-25 09:53:14
+ * @LastEditTime: 2021-03-28 19:18:28
  */
 const api = require('../../utils/api.js')
 const songs = require('../../utils/song.js')
@@ -67,8 +67,11 @@ Page({
       }
       app.songlist = [song]
       app.currentIndex = 0
-      wx.switchTab({
-        url: '/pages/index/index'
+      // wx.switchTab({
+      //   url: '/pages/index/index'
+      // })
+      wx.navigateTo({
+        url: '/pages/list/list',
       })
     }).catch(() => {
       console.log("?")
