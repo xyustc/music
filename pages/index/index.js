@@ -37,7 +37,7 @@ Page({
   playMusic: function (murl) {
     const that = this;
     let audio = app.songlist[0] || "";
-    console.log(audio.name)
+    console.log(audio)
     let manager = wx.getBackgroundAudioManager();
     manager.title = audio.name || "音频标题";
     manager.epname = audio.album || "专辑名称";

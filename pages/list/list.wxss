@@ -1,1 +1,15 @@
-/* pages/list/list.wxss */
+.item {
+    height:75rpx;
+    background-color: #fafafa;
+    margin-bottom: 15rpx;
+    padding: 10rpx 50rpx;
+    border-radius: 20rpx;
+}
+.item .songName{
+    font-size: 14px;
+    margin-bottom: 5rpx;
+}
+.item .singerName{
+    color: #8d8d8d;
+    font-size: 12px;
+}

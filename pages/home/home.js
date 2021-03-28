@@ -2,9 +2,9 @@
  * @Description: 
  * @Author: XingYu
  * @Date: 2021-03-25 21:55:28
- * @LastEditTime: 2021-03-28 19:27:43
+ * @LastEditTime: 2021-03-28 23:43:44
  */
-const app = getApp().globalData
+const app = getApp()
 const api = require("../../utils/api.js")
 Page({
 
@@ -27,14 +27,14 @@ Page({
       url: '/pages/search/search'
     })
   },
-  // _selectItemRank: function (event) {
-  //   const data = event.currentTarget.dataset.data
-  //   app.globalData.topId = data.id
-  //   app.globalData._selectItemRank = data
-  //   wx.navigateTo({
-  //     url: '/pages/list/list'
-  //   })
-  // },
+  _selectItemRank: function (event) {
+    const data = event.currentTarget.dataset.data
+    console.log(data.id)
+    app.globalData.topId = data.id
+    wx.navigateTo({
+      url: '/pages/list/list'
+    })
+  },
   _getRankData: function () {
     api.getTopList().then((res) => {
       var res1 = res.data.replace('jp1(', '')
@@ -44,6 +44,7 @@ Page({
       })
     })
   },
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

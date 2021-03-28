@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: XingYu
  * @Date: 2021-03-25 08:30:13
- * @LastEditTime: 2021-03-28 19:25:45
+ * @LastEditTime: 2021-03-28 22:05:41
  */
 
 const search = (key) => {
@@ -108,9 +108,22 @@ const getTopList = () => {
   })
 }
 
+const getTopMusicList = (topid) => {
+  const url = `https://c.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?g_tk=1928093487&inCharset=utf-8&outCharset=utf-8&notice=0&format=jsonp&topid=${topid}&needNewCode=1&uin=0&tpl=3&page=detail&type=top&platform=h5&jsonpCallback=jp1`
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: url,
+      success: function (res) {
+        resolve(res)
+      }
+    })
+  })
+}
+
 module.exports = {
   search: search,
   getSongDetails: getSongDetails,
   getSingerSongs: getSingerSongs,
-  getTopList: getTopList
+  getTopList: getTopList,
+  getTopMusicList: getTopMusicList
 }

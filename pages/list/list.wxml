@@ -1,1 +1,4 @@
-<view wx:for="{{songlist}}">{{item.name}}</view>
+<view class="item" wx:for="{{songlist}}">
+<view class="songName"><text>{{item.name}}</text></view>
+<view class="singerName"><text>{{item.singer}}</text></view>
+</view>
