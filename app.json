@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/search/search",
     "pages/index/index"
   ],
   "window": {
@@ -9,26 +7,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Music",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#919191",
-    "selectedColor": "#ffcd32",
-    "backgroundColor": "#FFF",
-    "position": "bottom",
-    "list": [
-      {
-        "pagePath": "pages/home/home",
-        "text": "搜索",
-        "iconPath": "images/home-1.png",
-        "selectedIconPath": "images/home-2.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "正在播放",
-        "iconPath": "images/rank-1.png",
-        "selectedIconPath": "images/rank-2.png"
-      }
-    ]
   },
   "requiredBackgroundModes": [
     "audio"

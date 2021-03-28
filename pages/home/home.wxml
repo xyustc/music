@@ -1,4 +1,0 @@
-<view class="search-wrapper" catchtap="toSearch">
-	<input class="search" placeholder="输入歌手名、歌曲名搜索" placeholder-style="color: #414040;" disabled placeholder-class="placeholder" />
-</view>
-
