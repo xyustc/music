@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/search/search",
     "pages/index/index"
   ],
@@ -17,7 +16,7 @@
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/search/search",
         "text": "搜索",
         "iconPath": "images/home-1.png",
         "selectedIconPath": "images/home-2.png"
