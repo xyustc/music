@@ -16,6 +16,7 @@ App({
     currentIndex: 0,
     fullScreen: false,
     songlist: [],
+    toplist: [],
     playing: false,
     innerAudioContext: null
   }

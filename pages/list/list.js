@@ -44,9 +44,9 @@ Page({
       var res1 = res.data.replace('jp1(', '')
       var res2 = JSON.parse(res1.substring(0, res1.length - 1))
       var res3 = res2.songlist
-      app.globalData.songlist = this._normalizeSongs(res3)
+      app.globalData.toplist = this._normalizeSongs(res3)
       this.setData({
-        songlist: app.globalData.songlist
+        songlist: app.globalData.toplist
       })
     })
   },
