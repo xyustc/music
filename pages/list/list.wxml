@@ -1,4 +1,6 @@
-<view class="item" wx:for="{{songlist}}">
-<view class="songName"><text>{{item.name}}</text></view>
-<view class="singerName"><text>{{item.singer}}</text></view>
+<view bindtap="_selectSong" data-data="{{item}}" data-index="{{index}}" class="item {{cuindex==index?'active':''}}{{flag?'all':''}}" wx:for="{{songlist}}">
+
+			<view class="songName"><text>{{item.name}}</text></view>
+			<view class="singerName"><text>{{item.singer}}</text></view>
+
 </view>

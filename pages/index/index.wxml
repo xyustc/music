@@ -1,20 +1,24 @@
 <!--index.wxml-->
 <view class="container">
-  <view class='background'>
-    <view class='info'>
-      <view class='songName'>《{{currentSong.name || '暂无正在播放歌曲'}}》</view>
-      <view>{{currentSong.singer}}</view>
+	<view class='background'>
+    <view bindtap='pageChange' class="list">
+    		<image src='/images/list.png'></image>
     </view>
-    <image class='poster {{playStatus?"rotate":"rotate-paused"}}' mode="scaleToFill" src='{{currentSong.image}}'></image>
-    <view class='progress'>
-      <text>{{progressText}}</text>
-      <slider class='bar' bindchange="sliderChange" bindchanging="sliderChanging" value="{{progress}}" step="1" min='0' max='{{duration}}' activeColor="#1aad19" block-size="12" block-color="#1aad19" />
-      <text>{{durationText}}</text>
-    </view>
-    <view class='buttons'>
-      <image class='button' bindtap='lastMusic' src='/images/last.png'></image>
-      <image class='button' bindtap='playOrpause' src='{{playStatus?"/images/pause.png":"/images/play.png"}}'></image>
-      <image class='button' bindtap='nextMusic' src='/images/next.png'></image>
-    </view>
-  </view>
+
+		<view class='info'>
+			<view class='songName'>《{{currentSong.name || '暂无正在播放歌曲'}}》</view>
+			<view>{{currentSong.singer}}</view>
+		</view>
+		<image class='poster {{playStatus?"rotate":"rotate-paused"}}' mode="scaleToFill" src='{{currentSong.image}}'></image>
+		<view class='progress'>
+			<text>{{progressText}}</text>
+			<slider class='bar' bindchange="sliderChange" bindchanging="sliderChanging" value="{{progress}}" step="1" min='0' max='{{duration}}' activeColor="#1aad19" block-size="12" block-color="#1aad19" />
+			<text>{{durationText}}</text>
+		</view>
+		<view class='buttons'>
+			<image class='button' bindtap='lastMusic' src='/images/last.png'></image>
+			<image class='button' bindtap='playOrpause' src='{{playStatus?"/images/pause.png":"/images/play.png"}}'></image>
+			<image class='button' bindtap='nextMusic' src='/images/next.png'></image>
+		</view>
+	</view>
 </view>

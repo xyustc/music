@@ -16,7 +16,6 @@ Page({
     result: false
   },
   searchAction: function (event) {
-    console.log(event)
     const keyWrod = event.detail.value
     api.search(keyWrod).then((res) => {
       let res1 = res.data.replace('SmartboxKeysCallbackmod_top_search3847(', '')
@@ -49,12 +48,10 @@ Page({
     }
   },
   selectSong: function (event) {
-    console.log(event)
     const mid = event.currentTarget.dataset.mid
     api.getSongDetails(mid).then((res) => {
       var res1 = res.data.replace('getOneSongInfoCallback(', '')
       var res2 = JSON.parse(res1.substring(0, res1.length - 1)).data[0]
-      console.log(res2)
       let song = {
         id: res2.id,
         mid: mid,
@@ -67,11 +64,8 @@ Page({
       }
       app.songlist = [song]
       app.currentIndex = 0
-      // wx.switchTab({
-      //   url: '/pages/index/index'
-      // })
-      wx.navigateTo({
-        url: '/pages/list/list',
+      wx.switchTab({
+        url: '/pages/index/index'
       })
     }).catch(() => {
       console.log("?")

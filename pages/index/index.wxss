@@ -13,7 +13,7 @@
 
 .background .info{
   position: fixed;
-  top: 70rpx;
+  top: 120rpx;
   left: 0;
   right: 0;
   font-size: 15pt;
@@ -28,15 +28,20 @@
   position: fixed;
   right: 40rpx;
   top: 40rpx;
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
+  z-index: 999;
+}
+.background .list image {
+  width: 80rpx;
+  height: 80rpx;
 }
 
 .background .poster {
   width: 500rpx;
   height: 500rpx;
   border-radius: 50%;
-  margin-top: 250rpx;
+  margin-top: 350rpx;
 }
 
 .rotate {
@@ -64,7 +69,7 @@
 
 .progress {
   position: fixed;
-  bottom: 90rpx;
+  bottom: 150rpx;
   left: 50rpx;
   right: 50rpx;
   display: flex;
@@ -84,7 +89,7 @@
 
 .buttons {
   position: fixed;
-  bottom: 20rpx;
+  bottom: 50rpx;
   left: 50rpx;
   right: 50rpx;
   display: flex;

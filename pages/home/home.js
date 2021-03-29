@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: XingYu
  * @Date: 2021-03-25 21:55:28
- * @LastEditTime: 2021-03-28 23:43:44
+ * @LastEditTime: 2021-03-29 20:47:01
  */
 const app = getApp()
 const api = require("../../utils/api.js")
@@ -29,7 +29,6 @@ Page({
   },
   _selectItemRank: function (event) {
     const data = event.currentTarget.dataset.data
-    console.log(data.id)
     app.globalData.topId = data.id
     wx.navigateTo({
       url: '/pages/list/list'

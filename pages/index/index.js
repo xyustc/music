@@ -5,27 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    playStatus: false,
+    playStatus: true,
     audioIndex: 0,//如果直接播放则改为对应下标
     progress: 0,
     duration: 0,
     currentSong: null,
-    songslist: []
+    songlist: []
   },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this._init()
+    if (app.songlist.length > 0 && this.data.songlist !== app.songlist) {
+      this._init()
+    }
   },
   //初始化
   _init: function () {
-    if (app.songlist.length > 0) {
-      if (!this.data.currentSong) {
-        let NextSong = app.songlist[app.currentIndex]
-        this._getPlayUrl(NextSong.mid)
-      }
-    }
+    let NextSong = app.songlist[app.currentIndex]
+    console.log(NextSong)
+    this.setData({
+      songlist: app.songlist
+    })
+    this._getPlayUrl(NextSong.mid)
   },
   /**
    * 生命周期函数--监听页面加载
@@ -61,7 +63,7 @@ Page({
 
   playMusic: function (murl) {
     const that = this;
-    let audio = app.songlist[0] || "";
+    let audio = app.songlist[app.currentIndex] || "";
     let manager = wx.getBackgroundAudioManager();
     manager.title = audio.name || "音频标题";
     manager.epname = audio.album || "专辑名称";
@@ -125,7 +127,7 @@ Page({
   //上一首
   lastMusic: function () {
     if (app.songlist.length > 0) {
-      let currentIndex = app.currentIndex > 0 ? app.currentIndex - 1 : this.data.songslist.length - 1;
+      let currentIndex = app.currentIndex > 0 ? app.currentIndex - 1 : app.songlist.length - 1;
       app.currentIndex = currentIndex
       this.setData({
         playStatus: false,
@@ -150,7 +152,7 @@ Page({
   //下一首
   nextMusic: function () {
     if (app.songlist.length > 0) {
-      let currentIndex = app.currentIndex < this.data.songslist.length - 1 ? app.currentIndex + 1 : 0;
+      let currentIndex = app.currentIndex < app.songlist.length - 1 ? app.currentIndex + 1 : 0;
       app.currentIndex = currentIndex
       this.setData({
         playStatus: false,
@@ -180,6 +182,12 @@ Page({
       t += sec;
     }
     return t;
+  },
+
+  pageChange:function(){
+    wx.navigateTo({
+      url: '/pages/list/list',
+    })
   },
 
   /**
